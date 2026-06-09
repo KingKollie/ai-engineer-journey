@@ -1,0 +1,4 @@
+name: Kollie
+city: Maryland
+goal: AI engineer
+Daily Hours: 2

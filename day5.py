@@ -1,7 +1,8 @@
 import anthropic
-
-client = anthropic.Anthropic(api_key="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")
-
+from dotenv import load_dotenv
+import os 
+load_dotenv()
+client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 def ask_ai(question):
     message = client.messages.create(
         model="claude-opus-4-6",

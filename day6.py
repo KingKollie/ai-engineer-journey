@@ -1,6 +1,7 @@
 import anthropic 
 from dotenv import load_dotenv
 import os 
+
 load_dotenv()
 client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
@@ -32,10 +33,10 @@ def ask_ai(question):
     response = message.content[0].text
 
     # Add AIrespone to history
-    conversation_history.append[{
-        "role": "assitant",
+    conversation_history.append({
+        "role": "assistant",
         "content": response
-    }]
+    })
     return response
 
 def handle_command(command):

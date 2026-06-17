@@ -1,4 +1,4 @@
-name: Jesse
+name: Kollie
 city: L.A
 goal: top dev engineer
 Daily Hours: 4

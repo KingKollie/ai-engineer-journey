@@ -1,4 +1,4 @@
 name: Kollie
-city: L.A
-goal: top dev engineer
+city: Baltimore
+goal: Top dev engineer
 Daily Hours: 4

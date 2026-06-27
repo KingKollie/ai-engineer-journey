@@ -42,3 +42,5 @@ leveraging 15+ years of warehouse operations experience.
 ```bash
 pip install streamlit anthropic python-dotenv pypdf2
 streamlit run day14.py
+## 🌐 Live Demo
+Backend API: https://ai-engineer-journey-w5ru.onrender.com

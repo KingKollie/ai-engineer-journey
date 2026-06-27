@@ -1,36 +1,28 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from config import ANTHROPIC_API_KEY, MODEL_NAME, MAX_TOKENS
+import anthropic
 
 app = FastAPI()
+client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
-# A simple model for our request
 class QuestionRequest(BaseModel):
     question: str
     document: str
 
-# Root endpoint - tests if the API is alive
 @app.get("/")
 def home():
     return {"message": "Kollie's AI API is running!"}
 
-# Health check endpoint
 @app.get("/health")
 def health():
     return {"status": "healthy"}
 
-# Q&A endpoint
 @app.post("/ask")
 def ask_question(request: QuestionRequest):
-    import anthropic
-    from dotenv import load_dotenv
-    import os
-   
-    load_dotenv()
-    client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
-   
     message = client.messages.create(
-        model="claude-opus-4-6",
-        max_tokens=1024,
+        model=MODEL_NAME,
+        max_tokens=MAX_TOKENS,
         messages=[
             {
                 "role": "user",
@@ -38,7 +30,6 @@ def ask_question(request: QuestionRequest):
             }
         ]
     )
-   
     return {
         "question": request.question,
         "answer": message.content[0].text

@@ -12,7 +12,7 @@ if "chat_history" not in st.session_state:
 
 # Check if API is running
 try:
-    response = requests.get(f"{API_URL}/health")
+    response = requests.get(f"{API_URL}/health", timeout=30)
     if response.status_code == 200:
         st.sidebar.success("✅ API is online")
     else:
@@ -50,10 +50,8 @@ if st.button("Ask"):
             with st.spinner("Thinking..."):
                 response = requests.post(
                     f"{API_URL}/ask",
-                    json={
-                        "question": question,
-                        "document": document_text
-                    }
+                    json={...}, 
+                    timeout=60
                 )
                 data = response.json()
                 answer = data["answer"]

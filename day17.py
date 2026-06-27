@@ -1,7 +1,8 @@
 import streamlit as st
 import requests
+import os
 
-API_URL = "http://127.0.0.1:8000"
+API_URL = os.getenv("BACKEND_url", "http://127.0.0.1:8000")
 
 st.title("📄 Kollie's AI Document Assistant")
 st.write("Powered by FastAPI + Claude AI")

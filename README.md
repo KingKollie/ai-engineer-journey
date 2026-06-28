@@ -1,13 +1,18 @@
-
 # 🤖 Kollie's AI Engineer Journey
 
 A documented progression from complete beginner to AI engineer,
 built in public on GitHub.
 
-## 🚀 What I'm Building
-An AI-powered Document Assistant that can read PDFs and text files,
-answer questions about them, and maintain conversation memory —
-the foundation of a future AI-powered Warehouse Management System (WMS).
+## 🌐 Live Demo
+- **Frontend App:** https://kollie-ai-frontend.onrender.com
+- **Backend API:** https://ai-engineer-journey-w5ru.onrender.com
+- **API Docs:** https://ai-engineer-journey-w5ru.onrender.com/docs
+
+## 🚀 What I Built
+A full-stack AI-powered Document Assistant that can read PDFs and
+text files, answer questions about them, and maintain conversation
+memory — built with a FastAPI backend and Streamlit frontend,
+deployed on Render.
 
 ## 📅 Progress Log
 
@@ -25,22 +30,27 @@ the foundation of a future AI-powered Warehouse Management System (WMS).
 | 12 | Sidebar with document stats + clear history button |
 | 13 | PDF file support |
 | 14 | Full conversation memory |
+| 15 | Professional README and portfolio polish |
+| 16 | FastAPI backend with AI endpoints |
+| 17 | Connected FastAPI backend to Streamlit frontend |
+| 18 | Environment variables and config system |
+| 19 | Deployment configuration |
+| 20 | Deployed backend API to Render (live on internet) |
+| 21 | Deployed full stack — frontend + backend live on internet |
 
 ## 🛠️ Tech Stack
 - Python 3.14
 - Anthropic Claude API
 - Streamlit
+- FastAPI
+- Uvicorn
 - PyPDF2
 - python-dotenv
 - Git & GitHub
+- Render (cloud deployment)
 
-## 🎯 End Goal
-Build and deploy a full AI-powered Warehouse Management System
-leveraging 15+ years of warehouse operations experience.
-
-## ▶️ How to Run
+## ▶️ How to Run Locally
 ```bash
-pip install streamlit anthropic python-dotenv pypdf2
-streamlit run day14.py
-## 🌐 Live Demo
-Backend API: https://ai-engineer-journey-w5ru.onrender.com
+pip install streamlit fastapi uvicorn anthropic python-dotenv pypdf2
+uvicorn day16:app --reload
+streamlit run day17.py

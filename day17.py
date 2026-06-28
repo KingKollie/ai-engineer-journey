@@ -50,7 +50,10 @@ if st.button("Ask"):
             with st.spinner("Thinking..."):
                 response = requests.post(
                     f"{API_URL}/ask",
-                    json={...}, 
+                    json={
+                        "question": question,
+                        "document": document_text
+                    }, 
                     timeout=60
                 )
                 data = response.json()
